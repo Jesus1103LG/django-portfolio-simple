@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    background: #000000; 
+    background: -webkit-linear-gradient(to left, #121212, #060606);  
+    background: linear-gradient(to left, #121212, #060606); 
+}
+
+.card-project:hover{
+    border: 1px solid #ddd;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.bg-black-style{
+    background: #121212;
+}
+.bg-black-nav{
+    background: #303030;
+}
+
+.link-style{
+    text-decoration: none;
+}

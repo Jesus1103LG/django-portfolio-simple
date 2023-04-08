@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<header class="row bg-black-style rounded shadow-lg">
+    <div class="col-md-4">
+        <img src="{% static 'portfolio/profile.png' %}" alt="" class="w-100">
+    </div>
+    <div class="col-md-8 my-auto">
+        <h1>I am <strong>Jesus Lopez</strong></h1>
+        <h2>I am a FullStack Developer</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga fugiat tenetur labore deserunt voluptates commodi provident, quaerat cupiditate autem nemo odit facilis cumque qui, temporibus aliquam nam doloremque itaque sunt ex culpa animi, exercitationem debitis assumenda tempore. Placeat est cupiditate explicabo ipsum velit, nemo exercitationem sequi quos vero optio, iste ut repellat quas nesciunt. Quibusdam vero blanditiis eum totam hic ipsam aperiam accusantium cumque ea nobis atque dolorum, natus rem. Officia laudantium doloremque quos! Error aliquid, deserunt delectus illum pariatur excepturi veritatis quisquam molestias et repellendus voluptates odio voluptas temporibus nesciunt cupiditate quas possimus corporis quos rerum ad facilis consectetur.</p>
+        <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-secondary btn-lg rounded-0 my-3">Download CV</a>
+    </div>
+</header>
+
+<div class="row my-4 text-center">
+    <h3>My Projects</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit dignissimos omnis obcaecati dolorum assumenda similique?</p>
+
+    {% for project in projects %}
+    
+        <div class="col-md-4 p-4">
+            <div class="card bg-black-style card-project">
+                <a href="{{project.url}}" target="_blank" class="link-style text-light">
+                    <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="">{{project.title}}</h4>
+                        <p>{{project.description}}</p>
+                        {% if project.url %}
+                        <button class="btn btn-secondary my-3">{{project.url}}</button>
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    
+    {% endfor %}
+</div>
+
+{% endblock %}
